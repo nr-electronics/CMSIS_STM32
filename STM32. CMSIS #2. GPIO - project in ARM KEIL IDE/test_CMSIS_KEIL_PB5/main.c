@@ -15,8 +15,8 @@ int main (void)
 	
 	while(1)
 	{
-		GPIO->BSRR |= GPIO_BSRR_BS5;
-		GPIO->BSRR |= GPIO_BSRR_BR5;
+		GPIOB->BSRR |= GPIO_BSRR_BS5;
+		GPIOB->BSRR |= GPIO_BSRR_BR5;
 	}
 	
 }
