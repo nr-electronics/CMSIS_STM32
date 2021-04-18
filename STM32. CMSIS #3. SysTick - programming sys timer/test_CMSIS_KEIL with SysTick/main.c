@@ -22,7 +22,7 @@ void SysTick_Handler(void)
 void delay_mS(uint32_t mS)
 {
   SysTick->VAL &= ~SysTick_VAL_CURRENT_Msk;//сбрасываем старые возможные значения текущего счета в 0
-  SysTick->VAL = SYSCLOCK / (1000 - 1); // для точного отсчета в 1 мс
+  SysTick->VAL = SYSCLOCK / 1000 - 1; // скобки убраны, очепятка. Правильнее в таком формате
   SysTick_CNT = mS;
   while(SysTick_CNT) {}// как только будет 0, то выходим из цикла и задержка заканчивается
 }
